@@ -5,6 +5,6 @@
 
   //autoloader
   spl_autoload_register(function($class) {
-    requuire_once 'classes/'.$class.'.php';
+    require_once 'classes/'.$class.'.php';
   });
  ?>
