@@ -24,6 +24,45 @@
       }
       return self::$connection;
     }
+    // $params = ['ivan', 'nikolic', 'adresa']
+    public function query($sql, $params = []) {
+      $this->error = false;
+      $this->query = $this->pdo->prepare($sql);
+
+      if($this->query) {
+        // bindovanje parametara
+        if(count($params)) {
+          $i=1;
+          foreach($params as $param) {
+            $this->query->bindValue($i, $param);
+            $i++;
+          }
+        } //end if(count($params))
+        if($this->query->execute()) {
+          $this->results = $this->query->fetchAll(PDO::FETCH_OBJ);
+          $this->count = $this->query->rowcount();
+        }
+        else {
+          $this->error = true;
+        }
+      } // end if($this->query)
+      return $this;
+    } // end query
+
+    public function results() {
+      return $this->results;
+    }
+
+    public function first() {
+      if(!empty($this->results)) {
+        return $this->results()[0];
+      }
+      return null;
+    }
+
+    public function count() {
+      return $this->count;
+    }
   }
 
  ?>

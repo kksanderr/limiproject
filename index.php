@@ -5,7 +5,15 @@
   // echo Config::DB_SOURCE;
 
   $db = Database::connect();
-  echo "<pre>";
-  print_r($db);
-  echo "</pre>";
+
+  // $sql = "SELECT * FROM korisnici WHERE ime = ? AND korisnik_id = ?";
+  //
+  // $korisnici = $db->query($sql, ['Bojana', 15])->first();
+  //
+  // echo "<pre>";
+  // //print_r($db);
+  // print_r($korisnici);
+  // echo "</pre>";
+  //
+  // echo $korisnici->adresa;
  ?>
