@@ -67,8 +67,32 @@
 
     //CRUD - create, read, update, delete
 
+    // insert
+    public function insert($table, $fields=[]) {
+      $values = '';
+      $i = 1;
+
+      foreach($fields as $field) {
+        $values .= '?';
+
+        if($i<count($fields)) {
+          $values .= ', ';
+        }
+        $i++;
+      }
+
+      $sql = "INSERT INTO {$table} VALUES ({$values})";
+      $this->query($sql, $fields);
+      if(!$this->error) {
+        return true;
+      }
+      return false;
+    }
+
     // find
     // $where = ['ime', 'bojana'];
+    // metod prima niz u kome je prvi clan polje a drugi vrednost
+    // dodati operator u metodu, domaci
     public function find($table, $where=[]) {
       if(count($where)===2) {
         $field = $where[0];
@@ -81,6 +105,31 @@
         }
       }
       return null;
+    }
+
+    // update
+    // $fields = [
+    //   'ime' => 'Zoran',
+    //   'prezime' => 'Kostic'
+    // ];
+    public function update($table, $id, $fields=[]) {
+      $set = '';
+      $i = 1;
+             //array as $key => $value
+      foreach($fields as $field => $value) {
+        $set .= "{$field} = ?";
+        if($i < count($fields)) {
+          $set .= ', ';
+        }
+
+        $i++;
+      }
+      $sql = "UPDATE {$table} SET {$set} WHERE id = {$id}";
+      $this->query($sql, $fields);
+      if(!$this->error) {
+        return true;
+      }
+      return false;
     }
 
     // delete

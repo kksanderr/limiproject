@@ -17,15 +17,40 @@
   //
   // echo $korisnici->adresa;
 
-  if($db->delete('korisnici', 6)) {
-    echo "uspelo!";
-  }
-  else {
-    echo "nije uspelo";
-  }
+  // if($db->delete('korisnici', 6)) {
+  //   echo "uspelo!";
+  // }
+  // else {
+  //   echo "nije uspelo";
+  // }
 
   // $korisnici = $db->find('korisnici', ['ime', 'Bojana'])->results();
+
+  // $update = $db->update('korisnici', 16, ['ime'=>'Milan', 'prezime'=>'Kater']);
+
+  // $fields = [
+  //   'ime'=>'Milan',
+  //   'prezime'=>'Kater'
+  // ];
+  //
+  // if($db->update('korisnici', 16, $fields)) {
+  //   echo "uspelo";
+  // }
+  // else {
+  //   echo "Nije uspelo";
+  // }
+
+  $fields = [null, 'Stefan', 'Palic', 'Ulica 22', 1212990569890];
+
+  if($db->insert('korisnici', $fields)) {
+    echo "Uspelo";
+  }
+  else {
+    echo "Nije uspelo";
+  }
+
   // echo "<pre>";
-  // print_r($korisnici);
+  // print_r($db);
+  // // print_r($korisnici);
   // echo "</pre>";
  ?>
