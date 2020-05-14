@@ -17,15 +17,15 @@
   //
   // echo $korisnici->adresa;
 
-  // if($db->delete('korisnici', 6)) {
-  //   echo "uspelo!";
-  // }
-  // else {
-  //   echo "nije uspelo";
-  // }
+  if($db->delete('korisnici', 6)) {
+    echo "uspelo!";
+  }
+  else {
+    echo "nije uspelo";
+  }
 
-  $korisnici = $db->find('korisnici', ['ime', 'Bojana'])->results();
-  echo "<pre>";
-  print_r($korisnici);
-  echo "</pre>";
+  // $korisnici = $db->find('korisnici', ['ime', 'Bojana'])->results();
+  // echo "<pre>";
+  // print_r($korisnici);
+  // echo "</pre>";
  ?>

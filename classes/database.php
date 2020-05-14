@@ -27,6 +27,7 @@
     // $params = ['ivan', 'nikolic', 'adresa']
     public function query($sql, $params = []) {
       $this->error = false;
+      $this->count = 0;
       $this->query = $this->pdo->prepare($sql);
 
       if($this->query) {
@@ -86,7 +87,7 @@
     public function delete($table, $id) {
       $sql = "DELETE FROM {$table} WHERE id = ?";
       $this->query($sql, [$id]);
-      if(!$this->error) {
+      if($this->count()) {
         return true;
       }
       return false;
