@@ -63,6 +63,35 @@
     public function count() {
       return $this->count;
     }
+
+    //CRUD - create, read, update, delete
+
+    // find
+    // $where = ['ime', 'bojana'];
+    public function find($table, $where=[]) {
+      if(count($where)===2) {
+        $field = $where[0];
+        $value = $where[1];
+
+        $sql = "SELECT * FROM {$table} WHERE {$field} = ?";
+        $this->query($sql, [$value]);
+        if(!$this->error) {
+          return $this;
+        }
+      }
+      return null;
+    }
+
+    // delete
+    public function delete($table, $id) {
+      $sql = "DELETE FROM {$table} WHERE id = ?";
+      $this->query($sql, [$id]);
+      if(!$this->error) {
+        return true;
+      }
+      return false;
+    }
+
   }
 
  ?>
