@@ -54,3 +54,55 @@
 }
 
 /* End Margins */
+
+/* Header */
+
+.header-wrapper {
+  position: relative;
+  background-color: #d65614;
+}
+
+.header {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo img {
+  width: 150px;
+}
+
+.logo a {
+  display: flex;
+}
+
+/* End Logo */
+
+
+.nav-bar {
+  display: flex;
+}
+
+.nav-bar ul {
+  display: flex;
+}
+
+.nav-bar li {
+  list-style: none;
+  position: relative;
+}
+
+.nav-bar li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 3px;
+}
+
+.nav-bar li a:hover {
+  background-color: white;
+  color: black;
+}
