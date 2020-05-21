@@ -122,6 +122,58 @@
   color: black;
 }
 
+/* Dropdown */
+.nav-bar li.dropdown-wrapper a:after {
+  content: '\25BE';
+  color: white;
+  position: absolute;
+  right: 4px;
+}
+
+.nav-bar li .dropdown {
+  display: none;
+}
+
+.nav-bar li.dropdown-wrapper:hover .dropdown {
+  display: block;
+}
+
+.nav-bar li:hover a:after  {
+  color: black;
+}
+
+.burger {
+  width: 50px;
+  background-color: transparent;
+  border: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid gray;
+  width: 140px;
+}
+.nav-bar li .dropdown li {
+  margin-bottom: 8px;
+}
+.nav-bar li .dropdown li:last-child {
+  margin-bottom: 0;
+}
+.nav-bar li .dropdown li a {
+  color: black;
+}
+.nav-bar li .dropdown a:after {
+  display: none;
+}
+
 /* End Header */
 
 /* Main Banner */
