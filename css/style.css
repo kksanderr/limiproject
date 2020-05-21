@@ -19,6 +19,19 @@
   padding: 0 15px;
 }
 
+.container-sm {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title {
+  font-size: 32px;
+  color: #6d6d6d;
+  font-weight: bold;
+}
+
 /* Margins */
 
 .mt-5, .my-5 {
@@ -59,7 +72,9 @@
 
 .header-wrapper {
   position: relative;
-  background-color: #d65614;
+  background: rgb(227,140,95);
+  background: linear-gradient(0deg, rgba(227,140,95,1) 1%,
+  rgba(223,119,64,1) 54%, rgba(195,78,18,1) 100%);
 }
 
 .header {
@@ -105,4 +120,148 @@
 .nav-bar li a:hover {
   background-color: white;
   color: black;
+}
+
+/* End Header */
+
+/* Main Banner */
+.main-banner {
+  background-image: url('https://beingcovers.com/media/facebook-cover/Blue-Sea-facebook-covers-3257.jpeg'
+);
+  background-size: cover;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.banner-text {
+  text-align: center;
+  color: black;
+}
+
+.banner-text h1 {
+  font-size: 40px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.banner-text p {
+  font-size: 16px;
+}
+/* End Banner*/
+
+/* Boxevi */
+
+.box-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.box {
+  width: 33.33%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-right: 15px;
+}
+
+.box h2 {
+  color: #6d6d6d;
+  font-size: 28px;
+  padding-bottom: 16px;
+}
+
+.box p {
+  color: grey;
+  font-size: 16px;
+  padding-bottom: 16px;
+}
+
+.box a {
+  color: #d65614;
+  text-decoration: none;
+}
+/* End Boxevi*/
+
+/* Events */
+
+.box-wrapper.events .box {
+  /*padding-right: 0;*/
+}
+
+.box-wrapper.events img {
+  width: 100%;
+}
+
+.box-wrapper.events h3, .box-wrapper.blog h3 {
+  margin: 20px 0 10px 0;
+  font-size: 20px;
+  color: #d65614;
+}
+
+.box-wrapper.events span, .box-wrapper.blog span {
+  color: #6d6d6d;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-style: italic;
+}
+/*End Events*/
+
+/* Blog */
+
+.box-wrapper.blog .box {
+  width: 49.99%;
+}
+
+.blog-btn {
+  text-align: center;
+}
+
+.blog-btn a {
+  color: #444444;
+  border: 1px solid #6d6d6d;
+  border-radius: 5px;
+  padding: 15px 40px;
+  min-width: 100px;
+  text-decoration: none;
+  text-transform: capitalize;
+  display: inline-flex;
+}
+/* End Blog */
+
+/* Login */
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* End Login */
+
+/* Responsive */
+/* Tablet */
+@media (max-width: 768px) {
+  .nav-bar {
+    display: none;
+  }
+
+  .box {
+    width:100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .box-wrapper.blog .box {
+    width: 100%;
+  }
+}
+/* Monitor */
+@media (min-width: 768px) {
+
+}
+/* Telefon */
+@media (max-width: 470px) {
+
 }

@@ -14,41 +14,12 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <header class="header-wrapper">
-      <div class="container">
-        <div class="header">
-          <h2 class="logo"><a href="index.php">
-            <img src="./img/logo.png" alt="logo">
-          </a></h2>
-          <nav class="nav-bar">
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">About</a>
-                </li>
-                <li>
-                  <a href="#">Login</a>
-                </li>
-                <li>
-                  <a href="#">Signup</a>
-                </li>
-              </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+<!-- Header -->
+<?php include('./templates/header.php'); ?>
+
 <!-- banner -->
-    <section class="main-banner mb-5">
-      <div class="container">
-        <div class="banner-text">
-          <h1>Limischool Bloger</h1>
-          <p>It is our belief that in order to be most efficient it requires
-            adaptive technology and software our customers can focus on their core business.</p>
-        </div>
-      </div>
-    </section>
+<?php include('./templates/banner.php'); ?>
+
 <!-- boxevi -->
     <section class="container">
       <div class="box-wrapper">
@@ -104,6 +75,60 @@
         </div>
 
       </div>
+    </section>
+
+    <section class="container mb-2">
+      <h2 class="title">Upcoming events</h2>
+      <div class="box-wrapper events">
+            <div class="box">
+                <img src="img/event/1.jpg" alt="alt-img1">
+                <h3>Rihanna, Eminem on stage</h3>
+                <span>Integrating technology and software solutions.</span>
+                <p>It is our belief that in order to be most efficient it requires adaptive technology and software solutions.</p>
+
+            </div>
+            <div class="box">
+                <img src="img/event/2.jpg" alt="alt-img2">
+                <h3>Dr. Dre on stage live</h3>
+                <span>Integrating technology and software solutions.</span>
+                <p>It is our belief that in order to be most efficient it requires adaptive technology and software solutions.</p>
+            </div>
+            <div class="box">
+                <img src="img/event/3.jpg" alt="alt-img3">
+                <h3>Macaroons live Party</h3>
+                <span>Integrating technology and software solutions.</span>
+                <p>It is our belief that in order to be most efficient it requires adaptive technology and software solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mb-2">
+      <h2 class="title">Latest Blogs</h2>
+        <div class="box-wrapper blog">
+            <div class="box">
+                <img src="./img/blog/1.jpg" alt="alt-blog1">
+                <h3>Communicating with you every step of the way</h3>
+                <span>July 02, 2014 | Tag: Technology | By: David John</span>
+                <p>We combine continuing education and constant monitoring us with
+                  your project details if you are interested to ge of industry trends
+                  and innovations to provide the right IT solution at the right time.
+                  Contact us with your project details if you are interested to
+                  get our Web Solution or Software Development Services.</p>
+            </div>
+            <div class="box">
+                <img src="./img/blog/2.jpg" alt="alt-blog2">
+                <h3>Communicating with you every step of the way</h3>
+                <span>July 02, 2014 | Tag: Technology | By: David John</span>
+                <p>We combine continuing education and constant monitoring us with
+                  your project details if you are interested to ge of industry trends
+                  and innovations to provide the right IT solution at the right time.
+                  Contact us with your project details if you are interested to
+                  get our Web Solution or Software Development Services.</p>
+            </div>
+        </div>
+        <div class="blog-btn">
+          <a href="#">See More</a>
+        </div>
     </section>
   </body>
 </html>
