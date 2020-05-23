@@ -165,7 +165,7 @@
             <li>
               <a href="signup.html">Signup</a>
             </li>
-            <p class="copyright mt-2">Copyright &copy; Limischool <?php echo date('Y') ?></p>
+            <p class="copyright mt-2">Copyright &copy; Limischool <?php echo date('Y'); ?></p>
           </ul>
         </div>
       </div>
