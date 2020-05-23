@@ -117,11 +117,6 @@
   border-radius: 3px;
 }
 
-.nav-bar li a:hover {
-  background-color: white;
-  color: black;
-}
-
 /* Dropdown */
 .nav-bar li.dropdown-wrapper a:after {
   content: '\25BE';
@@ -402,6 +397,30 @@
 @media (max-width: 768px) {
   .nav-bar {
     display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: orange;
+    padding: 60px 0;
+    z-index: 999;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-bar li {
+    margin-bottom: 10px;
+  }
+
+  .main-banner {
+    max-height: 500px;
   }
 
   .box {
@@ -416,7 +435,14 @@
 }
 /* Monitor */
 @media (min-width: 768px) {
+  .nav-bar {
+    display: flex !important;
+  }
 
+  .nav-bar li a:hover {
+    background-color: white;
+    color: black;
+  }
 }
 /* Telefon */
 @media (max-width: 470px) {
