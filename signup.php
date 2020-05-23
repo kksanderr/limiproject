@@ -12,7 +12,27 @@
   </head>
   <body>
     <?php include('./templates/header.php'); ?>
-    <h1>Signup</h1>
+
+    <section class="container-sm">
+      <div class="login-box">
+        <div class="login-form flex-center">
+          <h2>Signup</h2>
+          <form action="" method="post">
+            <p class="my-5">Username</p>
+            <input class="form-field mb-5" type="text" name="username">
+            <p class="my-5">E-mail Address</p>
+            <input class="form-field mb-5" type="text" name="email">
+            <p class="my-5">Password</p>
+            <input class="form-field mb-5" type="password" name="password">
+            <p class="my-5">Retype Password</p>
+            <input class="form-field mb-5" type="password" name="retype">
+            <div class="flex-center">
+              <button class="btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <?php include('./templates/footer.php'); ?>
 

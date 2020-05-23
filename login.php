@@ -19,8 +19,16 @@
 
     <section class="container-sm">
       <div class="login-box">
-        <div class="login-form">
+        <div class="login-form flex-center">
+          <h2>Login</h2>
           <form action="" method="post">
+            <p class="my-5">E-mail Address</p>
+            <input class="form-field mb-5" type="text" name="email">
+            <p class="my-5">Password</p>
+            <input class="form-field mb-5" type="password" name="password">
+            <div class="flex-center">
+              <button class="btn">Submit</button>
+            </div>
           </form>
         </div>
       </div>
