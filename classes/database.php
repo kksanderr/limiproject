@@ -93,45 +93,57 @@
     // $where = ['ime', 'bojana'];
     // metod prima niz u kome je prvi clan polje a drugi vrednost
     // dodati operator u metodu, domaci
-    public function find($table, $where=[], $log_operators=[]) {
-      if(count($where)===3) {
-         $sql = "SELECT * FROM {$table} WHERE ";
-         $i = 0;
-         $value=[];
+    // public function find($table, $where=[], $log_operators=[]) {
+    //   if(count($where)===3) {
+    //      $sql = "SELECT * FROM {$table} WHERE ";
+    //      $i = 0;
+    //      $value=[];
+    //
+    //      // visedimenzionalni nizovi
+    //      if(is_array($where[0])) {
+    //         while($i < count($where[0])) {
+    //           $field = $where[0][$i];
+    //           array_push($value, $where[1][$i]);
+    //           $operator = $where[2][$i];
+    //
+    //           if(isset($log_operators[$i])) {
+    //             $sql .= "{$field} {$operator} ? $log_operators[$i] ";
+    //           }
+    //           else {
+    //             $sql .= "{$field} {$operator} ?";
+    //           }
+    //           $i++;
+    //         }
+    //       $this->query($sql, $value);
+    //     }
+    //
+    //     // jednodimenzionalni nizovi
+    //     else {
+    //       $field = $where[0];
+    //       $value = $where[1];
+    //       $operator = $where[2];
+    //
+    //       $sql .= "{$field} {$operator} ?";
+    //       $this->query($sql, [$value]);
+    //     }
+    //
+    //     if(!$this->error) {
+    //       return $this;
+    //     }
+    //   }
+    //   return null;
+    // }
 
-         // visedimenzionalni nizovi
-         if(is_array($where[0])) {
-            while($i < count($where[0])) {
-              $field = $where[0][$i];
-              array_push($value, $where[1][$i]);
-              $operator = $where[2][$i];
 
-              if(isset($log_operators[$i])) {
-                $sql .= "{$field} {$operator} ? $log_operators[$i] ";
-              }
-              else {
-                $sql .= "{$field} {$operator} ?";
-              }
-              $i++;
+    public function find($table, $field, $value) {
+             $sql = "SELECT * FROM {$table} WHERE {$field} = ?" ;
+
+              $this->query($sql, [$value]);
+              if(!$this->error) {
+                return $this;
             }
-          $this->query($sql, $value);
-        }
 
-        // jednodimenzionalni nizovi
-        else {
-          $field = $where[0];
-          $value = $where[1];
-          $operator = $where[2];
-
-          $sql .= "{$field} {$operator} ?";
-          $this->query($sql, [$value]);
-        }
-
-        if(!$this->error) {
-          return $this;
-        }
-      }
-      return null;
+         return null;
     }
 
     // update

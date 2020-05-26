@@ -23,7 +23,7 @@ if(Input::exists('post')) {
 		'email' => [
 			'required' => true,
 			'email' => true,
-			/*'unique' => 'users'*/
+			'unique' => 'users'
 		]
 	];
 
