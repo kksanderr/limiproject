@@ -48,3 +48,8 @@ CREATE TABLE IF NOT EXISTS subscriptions (
   PRIMARY KEY (id)
 ) ENGINE = InnoDB
 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT = 1;
+
+
+INSERT INTO categories VALUES
+(NULL, 'Events', 'Limiblog events...', now(), now()),
+(NULL, 'Blogs', 'Our blogs...', now(), now());
