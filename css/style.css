@@ -68,6 +68,35 @@
 
 /* End Margins */
 
+/* Messages */
+
+.messages {
+  text-align: center;
+}
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 25px;
+  position:relative;
+  border-radius: 11px;
+}
+
+.success {
+  color: #ffffff;
+  background-color: green;
+  font-weight: bold;
+}
+
+.error {
+  color: #ffffff;
+  background-color: #b22222;
+  font-weight: bold;
+}
+
+/* end messages */
+
+
 /* Header */
 
 .header-wrapper {
@@ -391,13 +420,16 @@
 }
 .login-box {
   margin-top: 50px;
-  margin-bottom: 100px;
-  border-radius: 34px 34px 34px 34px;
-  -moz-border-radius: 34px 34px 34px 34px;
-  -webkit-border-radius: 34px 34px 34px 34px;
-  -webkit-box-shadow: -4px 6px 14px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: -4px 6px 14px -3px rgba(0,0,0,0.75);
-  box-shadow: -4px 6px 14px -3px rgba(0,0,0,0.75);
+  /*margin-bottom: 100px;*/
+
+}
+
+.container-login-signup {
+  width: 100%;
+  min-height: 829px;
+  background: rgb(222,165,165);
+  background: linear-gradient(0deg, rgba(222,165,165,1) 0%,
+  rgba(227,161,127,0.9794292717086834) 41%, rgba(227,140,95,1) 100%);
 }
 
 .login-form {
@@ -405,6 +437,13 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: white;
+  border-radius: 34px 34px 34px 34px;
+  -moz-border-radius: 34px 34px 34px 34px;
+  -webkit-border-radius: 34px 34px 34px 34px;
+  -webkit-box-shadow: -4px 6px 14px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px 6px 14px -3px rgba(0,0,0,0.75);
+  box-shadow: -4px 6px 14px -3px rgba(0,0,0,0.75);
 }
 
 .login-form h2 {
@@ -490,6 +529,10 @@
   .nav-bar li a:hover {
     background-color: white;
     color: black;
+  }
+
+  .form-field {
+    min-width: 500px;
   }
 }
 /* Telefon */
