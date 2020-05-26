@@ -9,7 +9,7 @@
   }
 
   if(Session::exists('errors')) {
-    $error = Session::message('errors');
+    $errors = Session::message('errors');
     foreach ($errors as $error) {
       echo '<div class="msg error mb-2">'.$error.'</div>';
     }

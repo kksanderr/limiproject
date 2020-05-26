@@ -5,10 +5,28 @@
 	if(Input::exists('post')) {
 
 		// validacija
-		// login
-		// redirekt
-		Session::set('success', 'You are loged in');
-		Redirect::to('index.php');
+		$validation = new Validate();
+
+		$rules = [
+			'email' => [
+				'required' => true,
+				'email' => true,
+				/*'unique' => 'users'*/
+			],
+			'password' => [
+				'required' => true,
+			]
+		];
+
+		$validation->check($_POST, $rules);
+
+		if($validation->passed()) {
+			// login
+			// redirekt
+			Session::set('success', 'You are loged in');
+			Redirect::to('index.php');
+		}
+
 	}
 
 

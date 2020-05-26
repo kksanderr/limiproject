@@ -3,10 +3,44 @@ require_once('core/start.php');
 
 if(Input::exists('post')) {
 	// validacija
-	// registracija korisnika
-	// redirekt
-	Session::set('success', 'You have been registered and can now loged in');
-	Redirect::to('login.php');
+
+	$validation = new Validate();
+
+	$rules = [
+		'username' => [
+			'required' => true,
+			'min' => 2,
+			'max' => 60
+		],
+		'password' => [
+			'required' => true,
+			'min' => 6
+		],
+		'retype' => [
+			'required' => true,
+			'matches' => 'password'
+		],
+		'email' => [
+			'required' => true,
+			'email' => true,
+			/*'unique' => 'users'*/
+		]
+	];
+
+	$validation->check($_POST, $rules);
+
+	if($validation->passed()) {
+		// registracija korisnika
+		// ...
+		// redirekt
+		Session::set('success', 'You have been registered and can now loged in');
+		Redirect::to('login.php');
+	}
+	else {
+		Session::set('errors', $validation->errors());
+	}
+
+
 }
 
 ?>
