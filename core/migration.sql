@@ -20,7 +20,7 @@ DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT = 1;
 CREATE TABLE IF NOT EXISTS categories (
   id int unsigned NOT NULL AUTO_INCREMENT,
   title varchar(60) COLLATE utf8_general_ci NOT NULL,
-  description text COLLATE utf8_general_ci NULL DEFAULT '-',
+  description varchar(255) COLLATE utf8_general_ci NULL DEFAULT '-',
   created_at DATETIME NOT NULL,
   updated_at DATETIME NOT NULL,
   PRIMARY KEY (id)
@@ -31,7 +31,7 @@ DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT = 1;
 CREATE TABLE IF NOT EXISTS posts (
   id int unsigned NOT NULL AUTO_INCREMENT,
   title varchar(60) COLLATE utf8_general_ci NOT NULL,
-  body text COLLATE utf8_general_ci NULL DEFAULT '-',
+  body text COLLATE utf8_general_ci NULL,
   img varchar(80) COLLATE utf8_general_ci NOT NULL,
   category_id int unsigned NOT NULL,
   created_at DATETIME NOT NULL,
