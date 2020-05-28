@@ -22,9 +22,16 @@
 
 		if($validation->passed()) {
 			// login
-			// redirekt
-			Session::set('success', 'You are loged in');
-			Redirect::to('index.php');
+			$user = new User();
+			if($user->login(Input::get('email'), Input::get('password'))) {
+				// redirekt
+				Session::set('success', 'You are loged in');
+				Redirect::to('profile.php');
+			}
+			else {
+				Session::set('error', 'Login failed! Wrong email or password.');
+			}
+
 		}
 		else {
 			Session::set('errors', $validation->errors());

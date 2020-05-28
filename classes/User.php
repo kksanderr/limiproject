@@ -2,7 +2,7 @@
 
 class User {
   private $db,
-          $data = [],
+          $data,
           $isLoggedIn = false;
 
   public function __construct() {
@@ -28,15 +28,32 @@ class User {
   }
 
   public function login($email, $password) {
+    if($this->find($email)) {
+      $user = $this->data();
 
+      //pass check
+      if(Hash::make($password) === $user->password) {
+        Session::set('user', $user->id);
+        $this->isLoggedIn = true;
+        return true;
+      }
+    }
+
+    return false;
   }
 
   public function logout() {
-
+    Session::delete('user');
+    return $this->isLoggedIn = false;
   }
 
   public function checkLogin() {
-
+    if(Session::exists('user')) {
+      if($this->find(Session::get('user'))) {
+        return $this->isLoggedIn = true;
+      }
+    }
+    return $this->isLoggedIn = False;
   }
 
   public function data() {
