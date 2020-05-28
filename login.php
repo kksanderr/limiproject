@@ -26,6 +26,9 @@
 			Session::set('success', 'You are loged in');
 			Redirect::to('index.php');
 		}
+		else {
+			Session::set('errors', $validation->errors());
+		}
 
 	}
 

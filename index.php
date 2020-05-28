@@ -140,6 +140,20 @@
             <input class="subscribe-field" type="text" name="email" placeholder="Email">
             <input class="subscribe-button" type="submit" value="Subscribe">
           </form>
+
+          <div class="mt-5">
+            <?php
+            if(Session::exists('subscribed')) {
+              echo '<div class="msg success">'.Session::message('subscribed').'</div>';
+            }
+            elseif(Session::exists('errors')) {
+              $errors = Session::message('errors');
+              foreach($errors as $error) {
+                echo '<div class="msg error mb-2">'.$error.'</div>';
+              }
+            }
+            ?>
+          </div>
         </div>
       </div>
     </section>
