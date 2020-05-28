@@ -10,7 +10,8 @@ if(Input::exists('post')) {
 		'username' => [
 			'required' => true,
 			'min' => 2,
-			'max' => 60
+			'max' => 60,
+			'unique' => 'users'
 		],
 		'password' => [
 			'required' => true,
@@ -31,6 +32,18 @@ if(Input::exists('post')) {
 
 	if($validation->passed()) {
 		// registracija korisnika
+		$user = new User();
+		$data = [
+			NULL,
+			Input::get('username'),
+			Input::get('email'),
+			Hash::make(Input::get('password')),
+			'user',
+			date('Y-m-d H:i:s'), // created at
+			date('Y-m-d H:i:s') // updated at
+		];
+
+		$user->create($data);
 		// ...
 		// redirekt
 		Session::set('success', 'You have been registered and can now loged in');
