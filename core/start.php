@@ -10,4 +10,7 @@
 
 // konekcija sa bazom
   $db = Database::connect();
+
+  $user = new User();
+  $user->checkLogin();
  ?>

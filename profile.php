@@ -1,8 +1,6 @@
 <?php
   require_once('core/start.php');
 
-  $user = new User();
-  $user->checkLogin();
 
   if(!$user->isLoggedIn()) {
     Session::set('error', 'You need to log in');

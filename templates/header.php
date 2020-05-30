@@ -19,37 +19,46 @@
             <li>
               <a href="#">About</a>
             </li>
-            <li>
-              <a href="login.php">Login</a>
-            </li>
-            <li>
-              <a href="signup.php">Signup</a>
-            </li>
 
-            <!-- Dropdown -->
-            <li class="dropdown-wrapper">
-              <a href="#"> Dropdown </a>
-              <ul class="dropdown">
-                <li>
-                  <a href="#">
-                    Drop 1
-                  </a>
-                </li>
+            <?php
+              if(isset($user) && $user->isLoggedIn()) {
+$html = <<<OUT
+<li class="dropdown-wrapper">
+  <a href="#"> {$user->data()->username} </a>
+  <ul class="dropdown">
+  <li>
+  <a href="profile.php">
+  Profile
+  </a>
+  </li>
+  <li>
+  <a href="#">
+  New article
+  </a>
+  </li>
+  <li class="dropdown-divider"></li>
+  <li>
+  <a href="#">
+  Logout
+  </a>
+  </li>
+  </ul>
+  </li>
+OUT;
+              }
+              else {
+$html = <<<OUT
+  <li>
+  <a href="login.php">Login</a>
+  </li>
+  <li>
+  <a href="signup.php">Signup</a>
+  </li>
+OUT;
+              }
+              echo $html;
+            ?>
 
-                <li>
-                  <a href="#">
-                    Drop 2
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    Drop 3
-                  </a>
-                </li>
-              </ul>
-          </li>
-          <!-- end dropdown -->
           </ul>
       </nav>
     </div>
